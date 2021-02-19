@@ -12,7 +12,12 @@ func main(){
 	"key3": {
 		"key4": 4,
 		"key5": 5
-	}
+	},
+	"key6": [{
+		"key7": 7
+	}, {
+		"key8": 8
+	}]
 }`
 	result,err := core.TransferToOneLevel(testJson)
 	fmt.Println(err)
