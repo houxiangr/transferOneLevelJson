@@ -14,7 +14,7 @@ func TransferToOneLevel(source string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	err = dealObjMap("", objMap, &res)
+	err = dealObjMap("$", objMap, &res)
 	if err != nil {
 		return "", err
 	}
@@ -32,6 +32,7 @@ func dealObjMap(baseKey string, obj interface{}, res *map[string]interface{}) er
 
 	switch reflect.TypeOf(obj).Kind() {
 	case reflect.Map:
+		(*res)[baseKey] = obj
 		for k,v := range obj.(map[string]interface{}) {
 			tempBaseKeyBytes := []byte{}
 			if baseKey != "" {
@@ -44,6 +45,7 @@ func dealObjMap(baseKey string, obj interface{}, res *map[string]interface{}) er
 			}
 		}
 	case reflect.Slice:
+		(*res)[baseKey] = obj
 		for k, v := range obj.([]interface{}) {
 			tempBaseKeyBytes := append(baseKeyBytes, []byte("[")...)
 			tempBaseKeyBytes = append(tempBaseKeyBytes, []byte(strconv.Itoa(k))...)

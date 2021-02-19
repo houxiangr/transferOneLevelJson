@@ -17,7 +17,11 @@ func main(){
 		"key7": 7
 	}, {
 		"key8": 8
-	}]
+	},[
+		{
+			"key9":9
+		}
+	]]
 }`
 	result,err := core.TransferToOneLevel(testJson)
 	fmt.Println(err)
