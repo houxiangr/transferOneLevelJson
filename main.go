@@ -27,7 +27,6 @@ func main(){
 	fmt.Println(err)
 	fmt.Println(result)
 
-
 	result2,err2 := core.TransferToOneLevelShowAll(testJson)
 	fmt.Println(result2)
 	fmt.Println(err2)
