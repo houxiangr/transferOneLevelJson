@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/transferOneLevelJson/core"
+	"github.com/houxiangr/transferOneLevelJson/core"
 )
 
 func main(){
