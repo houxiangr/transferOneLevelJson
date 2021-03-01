@@ -2,6 +2,7 @@ package core
 
 import "sync"
 
+//todo 等go-cache完成后替换
 var cacheMap map[string]string
 var cacheLock sync.RWMutex
 
